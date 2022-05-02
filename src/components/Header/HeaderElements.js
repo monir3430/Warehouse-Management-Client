@@ -11,8 +11,6 @@ justify-content: space-between;
 padding: 0.5rem calc((100vw - 1000px)/2);
 x-index: 10;
 
-
-
 `
 
 export const NavLink=styled(Link)`
@@ -25,12 +23,13 @@ height: 100%;
 cursor: pointer:
 
 &:hover{
-    transition: all 0.2s ease-in-out;
-    background: #fff;
-    color: black;}
+
+   
+    }
 
 &.active {
-    color: #15cdfc;
+    color: blue;
+    
 
 }
 
@@ -42,28 +41,15 @@ align-items: center;
 margin-right: -24px;
 padding: 5px;
 
-
-
-@media screen and (max-width: 768px){
-font-size: 12px;
-margin: 2px;
-
-}
-
 `
 export const NavBtn = styled.nav`
 display: flex;
 align-items: center;
 margin-right: 24px;
 
-
-
-@media screen and (max-width: 768px){
-display: none;
-}
 `
 export const NavBtnLink = styled(Link)`
-margin-left:150px;
+margin-left:15px;
 color: white;
 border-radius: 4px;
 background: #256ce1;

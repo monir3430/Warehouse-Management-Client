@@ -24,12 +24,13 @@ const Headers = () => {
             <NavLink to ="/Blogs" >
             Blogs
             </NavLink>
-            <NavLink to ="/Signup" >
-                Sign Up
-            </NavLink>
+            
         </NavMenu>
         <NavBtn>
 
+            <NavBtnLink to = "/Signup">
+            Sign Up
+            </NavBtnLink>
             <NavBtnLink to = "/Signin">
             Sign In
             </NavBtnLink>
