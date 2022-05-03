@@ -16,3 +16,7 @@ box-sizing: border-box;
     color: #022e44;
     
 }
+.error{
+    color: red;
+    margin:10px;
+}
