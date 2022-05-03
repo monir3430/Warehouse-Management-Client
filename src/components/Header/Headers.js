@@ -4,11 +4,14 @@ import {Nav, NavLink, NavMenu, NavBtn, NavBtnLink} from "./HeaderElements";
 const Headers = () => {
     
     return (
-       <>
+       <div>
        
        <Nav>
 
         <NavMenu>
+        <NavLink to ="/Home" >
+                Home
+            </NavLink>
             <NavLink to ="/Inventory" >
                 Inventory
             </NavLink>
@@ -39,7 +42,7 @@ const Headers = () => {
        </Nav>
       
       
-       </>
+       </div>
     );
 };
 

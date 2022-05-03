@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import './App.css'
 
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
@@ -17,21 +18,15 @@ import MyItems from './components/MyItems/MyItems';
 
 function App() {
 
-  const [users, setUsers] = useState([]);
-
-  useEffect(()=>{
-    fetch('http://localhost:5000/users')
-    .then(res=>res.json())
-    .then(data=>setUsers(data))
-  }, [])
 
 
   return (
-    <div>
+    <div className='main-body'>
       
       <Headers></Headers>
       <Routes>
         <Route path = "/" element = {<Home></Home>}></Route>
+        <Route path = "/Home" element = {<Home></Home>}></Route>
         <Route path = "/Inventory" element = {<Inventory></Inventory>}></Route>
         <Route path = "/ManageItems" element = {<ManageItems></ManageItems>}></Route>
         <Route path = "/MyItems" element = {<MyItems></MyItems>}></Route>
@@ -41,10 +36,7 @@ function App() {
         <Route path = "/Blogs" element = {<Blogs></Blogs>}></Route>
         
       </Routes>
-      <h1>{users.length}</h1>
-      {
-        users.map(user=> <li key ={user.id}> ID: {user.id} Name:{user.name} Email: {user.email}</li>)
-      }
+      
       <Footer></Footer>
     </div>
   );
