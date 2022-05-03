@@ -37,8 +37,8 @@ const AddItems = () => {
     })
     .then(res=>res.json())
     .then(data=>{ console.log(data)
-        toast('Data successfully added')
         event.target.reset();
+        toast('Data successfully added')
         // const newProduct = [...productInfo, data];
         // setProductInfo(newProduct)
     })

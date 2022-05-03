@@ -3,12 +3,16 @@ import book from "../../images/book.jpg"
 import './Home.css'
 
 const Home = () => {
+
     const [bookInfo, setBookInfo] = useState([]);
     useEffect(()=>{
         fetch('http://localhost:5000/bookInfo')
         .then(res=>res.json())
         .then(data => setBookInfo(data))
     }, [])
+
+    const books = bookInfo.slice(0, 6)
+    
 
     return (
         <div className='home'>
@@ -36,19 +40,20 @@ const Home = () => {
                     <p><b>A leading position of Bangladesh in which we can stock every kind of books and deliver as customer desired</b></p>
                 </div>
             </div>
-            <h2>Total Book: {bookInfo.length}</h2>
-            <div>
-                {
-                    bookInfo.map(book=> <p>
-                   Name:  {book.name} <br />
-                    Author: {book.author} <br />
-                    Price: {book.price} <br />
-                    <img src={book.img} alt="" />
+            <h2>{books.length}</h2>
+            {
+                books.map(book=>
+                    <p key = {book._id}>
+                    <img src={book.img} alt="" /> <br />
+                     <b>Name:</b>  {book.name} <br />
+                    <b>Author:</b> {book.author} <br />
+                    <b>Price:</b> Tk. {book.price} <br />
+                    <b>In Stock:</b> {book.stock} <br />
                     
-                    </p>
-                    )
-                }
-            </div>
+                    
+                    </p>)
+            }
+            
         </div>
     );
 };

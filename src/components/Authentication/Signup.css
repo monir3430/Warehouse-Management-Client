@@ -1,0 +1,18 @@
+.signup-area{
+    background: #f5a6a6;
+    width: 300px;
+    margin: auto;
+    height: 400px;
+    border-radius: 15px;
+    padding: 40px;
+    box-sizing: border-box;
+    
+    }
+    .signup{
+        text-align: center;
+        margin-top: 10px;
+        font-weight: 900;
+        font-size: 1.6rem;
+        color: #022e44;
+        
+    }

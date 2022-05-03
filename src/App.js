@@ -14,6 +14,7 @@ import Home from "./components/Home/Home"
 import Inventory from './components/Inventory/Inventory';
 import ManageItems from './components/Manage-Items/ManageItems';
 import MyItems from './components/MyItems/MyItems';
+import NotFound from './components/NotFound/NotFound';
 
 
 function App() {
@@ -34,6 +35,8 @@ function App() {
         <Route path = "/Signin" element = {<Signin></Signin>}></Route>
         <Route path = "/Signup" element = {<Signup></Signup>}></Route>
         <Route path = "/Blogs" element = {<Blogs></Blogs>}></Route>
+        <Route path = "/*" element = {<NotFound></NotFound>}></Route>
+
         
       </Routes>
       
