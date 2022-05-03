@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { toast, ToastContainer } from 'react-toastify';
 import "./Additems.css";
 
 const AddItems = () => {
@@ -36,6 +37,8 @@ const AddItems = () => {
     })
     .then(res=>res.json())
     .then(data=>{ console.log(data)
+        toast('Data successfully added')
+        event.target.reset();
         // const newProduct = [...productInfo, data];
         // setProductInfo(newProduct)
     })
@@ -54,6 +57,7 @@ const AddItems = () => {
                 <input type="url" name="img" placeholder='imageUrl' /><br /><br />
                 <textarea name="description" cols="30" rows="10" placeholder='Description'></textarea><br /><br />
                 <input type="submit" value="Add Book" />
+                <ToastContainer />
             </form>
         </div>
     );
