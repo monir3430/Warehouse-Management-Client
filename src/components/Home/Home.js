@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import book from "../../images/book.jpg"
+import { Link } from 'react-router-dom';
+import banner from "../../images/banner.jpg"
 import './Home.css'
 
 const Home = () => {
@@ -20,7 +21,12 @@ const Home = () => {
 
 
             <div className='activities'>
-                <div className='activity'> 
+                
+                <div>
+                    <h1><img src={banner} alt="" /></h1>
+                </div>
+               <div className='extra-section'>
+               <div className='activity'> 
                     <h2>Our Activities</h2>
                     <ol>
                         <b>
@@ -32,15 +38,15 @@ const Home = () => {
                         </b>
                     </ol>
                 </div>
-                <div>
-                    <h1><img src={book} alt="" /></h1>
-                </div>
                 <div className='activity'>
-                    <h2 >Out mission</h2>
+                    <h2 >Our mission</h2>
                     <p><b>A leading position of Bangladesh in which we can stock every kind of books and deliver as customer desired</b></p>
                 </div>
+               </div>
             </div>
-            <h2>{books.length}</h2>
+            <h1>Some books which are top selling</h1>
+            <div className='homeBookInfo'>
+            
             {
                 books.map(book=>
                     <p key = {book._id}>
@@ -48,11 +54,14 @@ const Home = () => {
                      <b>Name:</b>  {book.name} <br />
                     <b>Author:</b> {book.author} <br />
                     <b>Price:</b> Tk. {book.price} <br />
-                    <b>In Stock:</b> {book.stock} <br />
+                    <b>In Stock:</b> {book.stock} <br /> <br />
+
+                    <Link to ={`/update/${book._id}`}><button  className='button'>Update Info</button></Link>
                     
                     
                     </p>)
             }
+            </div>
             
         </div>
     );

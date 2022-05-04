@@ -9,32 +9,30 @@ const Headers = () => {
        <Nav>
 
         <NavMenu>
-        <NavLink to ="/Home" >
+        <NavLink to ="/home" >
                 Home
             </NavLink>
-            <NavLink to ="/Inventory" >
-                Inventory
-            </NavLink>
-            <NavLink to ="/ManageItems"  >
+            
+            <NavLink to ="/manage"  >
             Manage Items
             </NavLink>
-            <NavLink to ="/AddItems" >
+            <NavLink to ="/addItems" >
             Add Items
             </NavLink>
-            <NavLink to ="/MyItems" >
+            <NavLink to ="/myItems" >
             My Items
             </NavLink>
-            <NavLink to ="/Blogs" >
+            <NavLink to ="/blogs" >
             Blogs
             </NavLink>
             
         </NavMenu>
         <NavBtn>
 
-            <NavBtnLink to = "/Signup">
+            <NavBtnLink to = "/signup">
             Sign Up
             </NavBtnLink>
-            <NavBtnLink to = "/Signin">
+            <NavBtnLink to = "/signin">
             Sign In
             </NavBtnLink>
         </NavBtn>

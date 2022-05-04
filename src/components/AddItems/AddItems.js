@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from 'react';
 import { toast, ToastContainer } from 'react-toastify';
 import "./Additems.css";
 
@@ -22,8 +21,9 @@ const AddItems = () => {
         const publisher = event.target.publisher.value;
         const description = event.target.description.value;
         const img = event.target.img.value;
-        console.log(name, email, price, author, publisher, img, description)
-        const bookInfo = { name, email, price, author, publisher, img, description}
+        const stock = event.target.stock.value;
+        console.log(name, email, price, author, publisher, img, description, stock)
+        const bookInfo = { name, email, price, author, publisher, img, description, stock}
 
 
            // Post data to server
@@ -39,8 +39,7 @@ const AddItems = () => {
     .then(data=>{ console.log(data)
         event.target.reset();
         toast('Data successfully added')
-        // const newProduct = [...productInfo, data];
-        // setProductInfo(newProduct)
+        
     })
 
     }
@@ -55,7 +54,8 @@ const AddItems = () => {
                 <input type="number" name="price" placeholder='price' /><br /><br />
                 <input type="email" name="email" placeholder='Admin Email' /><br /><br />
                 <input type="url" name="img" placeholder='imageUrl' /><br /><br />
-                <textarea name="description" cols="30" rows="10" placeholder='Description'></textarea><br /><br />
+                <input type="number" name="stock" placeholder='Stock' /><br /><br />
+                <textarea name="description" cols="21" rows="6" placeholder='Description'></textarea><br /><br />
                 <input type="submit" value="Add Book" />
                 <ToastContainer />
             </form>

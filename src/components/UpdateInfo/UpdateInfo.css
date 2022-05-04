@@ -1,0 +1,21 @@
+.updateInfo{
+   text-align: center;
+    
+}
+.update{
+    color:blue;
+}
+.updateBookInfo{
+    margin: auto;
+    text-align: center;
+    border-radius: 0px;
+background: #d2c6c6;
+box-shadow:  30px 30px 60px #9e9595,-30px -30px 60px #fff8f8;
+line-height: 30px;
+}
+.updateButton{
+    cursor: pointer;
+    background-color: aqua;
+    margin-bottom: 7px;
+    
+}

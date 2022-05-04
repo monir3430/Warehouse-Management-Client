@@ -2,18 +2,46 @@
   text-align: center;
 
 }
-.activities{
+/* .activities{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 5px;
     padding: 20px;
-}
+} */
 
 .activity{
     margin-top: 30px;
     padding: 20px;
     border-radius: 0px;
     background: linear-gradient(145deg, #f0f0f0, #cacaca);
-    box-shadow:  13px 13px 0px #b8b8b8, -13px -13px 0px #ffffff;
+    box-shadow:  13px 13px 0px #b8b8b8,  0px #ffffff;
    height: 200px;
+}
+.extra-section{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+}
+.homeBookInfo{
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+}
+
+.homeBookInfo p{
+  margin: 8px auto;
+  border: 1px solid black;
+  width: 300px;
+  padding: 8px;
+  
+}
+.button{
+  border-radius: 3px;
+  cursor: pointer;
+  color: rgb(19, 3, 3);
+  background-color: rgb(177, 177, 247);
+}
+.button:hover{
+ background-color: green;
 }
