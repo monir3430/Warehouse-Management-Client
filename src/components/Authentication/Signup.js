@@ -6,6 +6,7 @@ import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 
+
 const Signup = () => {
 
     const [userInfo, setUserInfo] = useState({email: "", password: "", confirmPass: "",});
@@ -89,6 +90,10 @@ const Signup = () => {
             navigate(from);
         }
     }, [user])
+
+
+
+    
 
     return (
         <div className="signup-area" onSubmit={handleSubmit}>

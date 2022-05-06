@@ -14,6 +14,7 @@ import MyItems from './components/MyItems/MyItems';
 import NotFound from './components/NotFound/NotFound';
 import ManageItems from './components/Inventory/ManageItems';
 import UpdateInfo from './components/UpdateInfo/UpdateInfo';
+import RequiredAuth from './components/RequiredAuth/RequiredAuth';
 
 
 function App() {
@@ -33,7 +34,9 @@ function App() {
         <Route path = "/signin" element = {<Signin></Signin>}></Route>
         <Route path = "/signup" element = {<Signup></Signup>}></Route>
         <Route path = "/blogs" element = {<Blogs></Blogs>}></Route>
-        <Route path = "/update/:id" element = {<UpdateInfo></UpdateInfo>}></Route>
+        <Route path = "/update/:id" element = { <RequiredAuth>
+            <UpdateInfo/>
+          </RequiredAuth>}></Route>
         <Route path = "/*" element = {<NotFound></NotFound>}></Route>
 
         

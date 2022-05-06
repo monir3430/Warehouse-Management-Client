@@ -1,10 +1,24 @@
 import {Nav, NavLink, NavMenu, NavBtn, NavBtnLink} from "./HeaderElements";
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from '../../firebase/firebase.init'
+import { onAuthStateChanged, signOut } from "firebase/auth";
+import { useEffect, useState } from "react";
 
 
 const Headers = () => {
+    const [userInfo, setUserInfo]= useState({})
     const [user] = useAuthState(auth);
+
+    //Sign out---------------------------------------
+    const handleSignOut = () => {
+        signOut(auth).then(() => {console.log("Out")})
+    }
+
+    useEffect(() => {
+        onAuthStateChanged(auth, (user) => {
+            setUserInfo(userInfo || {});
+        });
+    }, [])
     
     return (
        <div>
@@ -31,7 +45,7 @@ const Headers = () => {
             
         </NavMenu>
         <NavBtn>
-        {user?<button>SignOut</button>: <NavBtnLink to = "/signin">
+        {user?<button onClick={handleSignOut}>SignOut</button>: <NavBtnLink to = "/signin">
             Sign In
             </NavBtnLink>}
 
