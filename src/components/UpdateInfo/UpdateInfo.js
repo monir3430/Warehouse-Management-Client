@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
 import "./UpdateInfo.css"
 
 const UpdateInfo = () => {
@@ -31,10 +32,10 @@ const UpdateInfo = () => {
         const updatedBookInfo = { name, email, price, author, publisher, img, description, stock}
 
 
-           // Update data to server
-
-    fetch('http://localhost:5000/bookInfo', {
-        method: 'POST',
+    // Update data to server---------------------------------------------
+    const url = `http://localhost:5000/bookInfo/${id}`;
+    fetch(url, {
+        method: 'PUT',
         headers:{
             'content-type': 'application/json'
         },
@@ -43,6 +44,7 @@ const UpdateInfo = () => {
     .then(res=>res.json())
     .then(data=>{ console.log(data)
         event.target.reset();
+        toast("Data Updated Successfully")
         
     })
 
@@ -65,6 +67,7 @@ const UpdateInfo = () => {
                 <input className='updateButton' type="submit" value="Update Information" />
                 
             </form>
+            <ToastContainer/>
             </div>
         </div>
     );

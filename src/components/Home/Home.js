@@ -12,7 +12,7 @@ const Home = () => {
         .then(data => setBookInfo(data))
     }, [])
 
-    const books = bookInfo.slice(0, 6)
+    const books = bookInfo.slice(0, 11)
     
 
     return (

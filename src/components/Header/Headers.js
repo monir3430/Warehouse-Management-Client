@@ -1,7 +1,10 @@
 import {Nav, NavLink, NavMenu, NavBtn, NavBtnLink} from "./HeaderElements";
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { auth } from '../../firebase/firebase.init'
 
 
 const Headers = () => {
+    const [user] = useAuthState(auth);
     
     return (
        <div>
@@ -28,13 +31,14 @@ const Headers = () => {
             
         </NavMenu>
         <NavBtn>
+        {user?<button>SignOut</button>: <NavBtnLink to = "/signin">
+            Sign In
+            </NavBtnLink>}
 
             <NavBtnLink to = "/signup">
             Sign Up
             </NavBtnLink>
-            <NavBtnLink to = "/signin">
-            Sign In
-            </NavBtnLink>
+           
         </NavBtn>
 
        </Nav>

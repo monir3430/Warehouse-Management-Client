@@ -3,6 +3,8 @@ import {auth} from "../../firebase/firebase.init"
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import "./Signup.css"
 import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const Signup = () => {
 
@@ -72,19 +74,29 @@ const Signup = () => {
                     toast("Wrong password.");
                     break;
                 default:
-                    toast("something went wrong");
+                    toast("something went wrong or already exist");
             }
         }
     }, [hookError]);
 
+    // Navigation----------------------
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathName || "/home"
+
+    useEffect(()=>{
+        if(user){
+            navigate(from);
+        }
+    }, [user])
 
     return (
         <div className="signup-area" onSubmit={handleSubmit}>
         <div className="signup">Please Sign Up</div> <br />
         <form className="Signup-form" >
-            <input type="email" placeholder="Enter Email" onChange={signupEmail}/>
-            <input type="password" placeholder=" Enter Password" onChange={signupPassword} /> <br />
-            <input type="password" placeholder=" Confirm Password" onChange={signupConfirmPassword} /> <br />
+            <input type="email" placeholder="Enter Email" onChange={signupEmail} required/>
+            <input type="password" placeholder=" Enter Password" onChange={signupPassword} required/> <br />
+            <input type="password" placeholder=" Confirm Password" onChange={signupConfirmPassword} required/> <br />
 
             {error?.email && <p className="error">{error.email}</p>}
             {error?.password && <p className="error">{error.password}</p>}
@@ -92,7 +104,7 @@ const Signup = () => {
             <button>Signup</button>
            
 
-            <p>Have a account? <b>Sign-in</b> </p>
+            <p>Have a account? <Link to = '/signin'><b>Sign-in</b></Link> </p>
             <ToastContainer />
         </form>
 
