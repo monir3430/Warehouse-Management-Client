@@ -63,6 +63,10 @@ const UpdateInfo = () => {
                     <b>Price:</b> Tk. {book.price} <br />
                     <b>In Stock:</b> {book.stock} <br />
                     <b>Description: </b> {book.description}
+                    <form onSubmit={handleStock}>
+                   <input type="number" name="stock" placeholder='Stock' /><br /> <br />
+                   <input className='updateButton' type="submit" value="Stock Update" />
+                </form>
                 </p>
             </div>
             <div className='updateBookInfo'>

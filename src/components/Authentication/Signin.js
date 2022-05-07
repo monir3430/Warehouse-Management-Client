@@ -8,6 +8,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 
 import spinner from "../../images/spinner.gif"
+import axios from 'axios';
 
 
 
@@ -110,17 +111,12 @@ const Signin = () => {
          
 
 
-
-
-
-
-
-
-
     const handleSubmit = (e)=>{
         e.preventDefault();
-        console.log(email, password)
-        signInWithEmailAndPassword(email, password)
+        console.log(email, password);
+       signInWithEmailAndPassword(email, password);
+       
+       
 
         
     }

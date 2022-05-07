@@ -3,15 +3,6 @@ import "./Additems.css";
 
 const AddItems = () => {
 
-//     const [productInfo, setProductInfo] = useState([]);
-//     console.log(productInfo)
-
-//   useEffect(()=>{
-//     fetch('http://localhost:5000/productInfo')
-//     .then(res=>res.json())
-//     .then(data=>setProductInfo(data))
-//   }, [])
-
     const handleAddProduct = (event) => {
         event.preventDefault();
         const name = event.target.name.value;

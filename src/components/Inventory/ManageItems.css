@@ -1,7 +1,13 @@
+.full-area{
+    display: flex;
+    gap: 20px;
+}
+
 .inventory{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 5px;
+    grid-template-columns: repeat(2, 0fr);
+    grid-gap: 7px;
+    margin-left: 5px;
     
     text-align: center;
     
@@ -15,7 +21,7 @@
     margin: auto;
     text-align: center;
     width: 350px;
-    height: 580px;
+    height: 500px;
     padding: 7px;
     
     
