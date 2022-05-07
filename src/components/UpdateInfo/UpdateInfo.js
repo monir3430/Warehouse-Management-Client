@@ -51,48 +51,60 @@ const UpdateInfo = () => {
             })
 
     }
+
+
+    //Update stock only------------------------------------
+    const handleStock = (e) => {
+        const stockInfo = e.target.stock.value;
+        console.log(stockInfo);
+        // const updatedStockInfo = { stockInfo }
+
+    }
     return (
-       <div className='home'>
+        <div className='home'>
             <div className='UpdateInfoALL'>
-            <div className='updateInfo'>
-                <h1>Book Name: <small className='update'>{book.name}</small></h1>
-                <p>
-                    <img src={book.img} alt="" /> <br />
-                    <b>Name:</b>  {book.name} <br />
-                    <b>Author:</b> {book.author} <br />
-                    <b>Price:</b> Tk. {book.price} <br />
-                    <b>In Stock:</b> {book.stock} <br />
-                    <b>Description: </b> {book.description}
-                    <form onSubmit={handleStock}>
-                   <input type="number" name="stock" placeholder='Stock' /><br /> <br />
-                   <input className='updateButton' type="submit" value="Stock Update" />
-                </form>
-                </p>
-            </div>
-            <div className='updateBookInfo'>
-                <h3>Enter info to update Existing data</h3>
-                <form onSubmit={updateInfo}>
-                    <input type="text" name="name" placeholder='Book Name' /><br />
-                    <input type="text" name="author" placeholder='Author' /><br />
-                    <input type="text" name="publisher" placeholder='Publisher' /><br />
-                    <input type="number" name="price" placeholder='price' /><br />
-                    <input type="email" name="email" placeholder='Admin Email' /><br />
-                    <input type="url" name="img" placeholder='imageUrl' /><br />
-                    <input type="number" name="stock" placeholder='Stock' /><br />
-                    <textarea name="description" cols="21" rows="6" placeholder='Description'></textarea><br /><br />
-                    <input className='updateButton' type="submit" value="Update Information" />
+                <div className='updateInfo'>
+                    <h1>Book Name: <small className='update'>{book.name}</small></h1>
+                    <div>
+                        <p>
+                            <img src={book.img} alt="" /> <br />
+                            <b>Name:</b>  {book.name} <br />
+                            <b>Author:</b> {book.author} <br />
+                            <b>Price:</b> Tk. {book.price} <br />
+                            <b>In Stock:</b> {book.stock} <br />
+                            <b>Description: </b> {book.description}
 
-                </form>
-                <ToastContainer />
-            </div>
-            
+                        </p>
+                        <form onSubmit={handleStock}>
+                            <input type="number" name="stock" placeholder='Stock' /><br /> <br />
+                            <input className='updateButton' type="submit" value="Stock Update" />
+                        </form>
+                    </div>
+                </div>
+                <div className='updateBookInfo'>
+                    <h3>Enter info to update Existing data</h3>
+                    <form onSubmit={updateInfo}>
+                        <input type="text" name="name" placeholder='Book Name' required/><br />
+                        <input type="text" name="author" placeholder='Author' required/><br />
+                        <input type="text" name="publisher" placeholder='Publisher'required /><br />
+                        <input type="number" name="price" placeholder='price' required /><br />
+                        <input type="email" name="email" placeholder='Admin Email'required /><br />
+                        <input type="url" name="img" placeholder='imageUrl'required /><br />
+                        <input type="number" name="stock" placeholder='Stock'required /><br />
+                        <textarea name="description" cols="21" rows="6" placeholder='Description' required></textarea><br /><br />
+                        <input className='updateButton' type="submit" value="Update Information" />
 
-        </div>
-        <div>
+                    </form>
+                    <ToastContainer />
+                </div>
+
+
+            </div>
+            <div>
                 <h2 className='homebottom'>Are you want to see & manage all books? Please click the below button</h2>
                 <Link to={'/manage'}><button className='Manage-button'>Manage Items</button></Link>
             </div>
-       </div>
+        </div>
     );
 };
 
