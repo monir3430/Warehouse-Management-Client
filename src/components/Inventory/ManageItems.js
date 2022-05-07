@@ -33,24 +33,39 @@ const ManageItems = () => {
         }
         
     }
+
+   
     return (
-        <div className='inventory'>
+        <div >
             
-           {
-                    bookInfo.map(book=> <p key = {book._id}>
-                    <img src={book.img} alt="" /> <br />
-                    <b>Name:</b>  {book.name} <br />
-                    <b>Author:</b> {book.author} <br />
-                    <b>Price:</b> Tk. {book.price} <br />
-                    <b>In Stock:</b> {book.stock} <br />
-                    <b>Description</b>: {book.description} <br /> <br />
-                    <button onClick={()=>dataDelete(book._id)}>Delete</button>
-                    
-                    </p>
-                    
-                    )
-                    
-                }
+          <div className='inventory'>
+          {
+                   
+                   
+                   bookInfo.map(book=> <p key = {book._id}>
+                   <img src={book.img} alt="" /> <br />
+                   <b>Name:</b>  {book.name} <br />
+                   <b>Author:</b> {book.author} <br />
+                   <b>Price:</b> Tk. {book.price} <br />
+                   <b>In Stock:</b> {book.stock} <br />
+                   <b>Description</b>: {book.description} <br /> <br />
+                   
+                   <span >
+                   <button className='manage-button' onClick={()=>dataDelete(book._id)}>Delete <i class="fa-solid fa-trash-can"></i></button>
+                   <button className='manage-button2' onClick={()=>dataDelete(book._id)}>Delivered <i class="fa-regular fa-truck-ramp-box"></i></button>
+                   </span>
+                   
+                   </p>
+                   
+                   )
+                   
+                  
+                 
+                   
+               }
+          </div>
+                
+
                 <ToastContainer/>
                 
         </div>

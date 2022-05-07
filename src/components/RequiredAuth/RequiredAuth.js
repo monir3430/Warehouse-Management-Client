@@ -2,6 +2,7 @@ import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Navigate, useLocation } from 'react-router-dom';
 import { auth } from '../../firebase/firebase.init';
+import spinner from '../../images/spinner.gif'
 
 
 const RequiredAuth = ({children}) => {
@@ -10,7 +11,7 @@ const RequiredAuth = ({children}) => {
 
     if(loading){
         if(loading){
-            return <p>Loading....</p>
+            return <p><img src={spinner} alt="" /></p>
         }
     }
     if(!user){

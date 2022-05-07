@@ -1,0 +1,17 @@
+.allitems{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 7px;
+    
+    
+}
+.allitems p{
+    border: 1px solid blue;
+    text-align: center;
+    padding: 7px;
+}
+.allbooks{
+    text-align: center;
+    color: blue;
+    background-color: rgba(213, 243, 189, 0.993);
+}

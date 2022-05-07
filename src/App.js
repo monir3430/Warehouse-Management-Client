@@ -15,6 +15,8 @@ import NotFound from './components/NotFound/NotFound';
 import ManageItems from './components/Inventory/ManageItems';
 import UpdateInfo from './components/UpdateInfo/UpdateInfo';
 import RequiredAuth from './components/RequiredAuth/RequiredAuth';
+import AllItems from './components/AllItems/AllItems';
+
 
 
 function App() {
@@ -28,15 +30,24 @@ function App() {
       <Routes>
         <Route path = "/" element = {<Home></Home>}></Route>
         <Route path = "/home" element = {<Home></Home>}></Route>
-        <Route path = "/manage" element = {<ManageItems></ManageItems>}></Route>
-        <Route path = "/myItems" element = {<MyItems></MyItems>}></Route>
-        <Route path = "/addItems" element = {<AddItems></AddItems>}></Route>
+        <Route path = "/manage" element = {<RequiredAuth>
+          <ManageItems/>
+        </RequiredAuth>}></Route>
+        <Route path = "/myItems" element = {<RequiredAuth>
+          <MyItems></MyItems>
+        </RequiredAuth>}></Route>
+        <Route path = "/addItems" element = {<RequiredAuth>
+          <AddItems></AddItems>
+        </RequiredAuth>}></Route>
         <Route path = "/signin" element = {<Signin></Signin>}></Route>
         <Route path = "/signup" element = {<Signup></Signup>}></Route>
         <Route path = "/blogs" element = {<Blogs></Blogs>}></Route>
+        <Route path = "/allitems" element = {<AllItems></AllItems>}></Route>
         <Route path = "/update/:id" element = { <RequiredAuth>
             <UpdateInfo/>
-          </RequiredAuth>}></Route>
+          </RequiredAuth>}>
+            
+          </Route>
         <Route path = "/*" element = {<NotFound></NotFound>}></Route>
 
         

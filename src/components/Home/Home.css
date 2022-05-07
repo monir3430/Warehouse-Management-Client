@@ -2,12 +2,6 @@
   text-align: center;
 
 }
-/* .activities{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 5px;
-    padding: 20px;
-} */
 
 .activity{
     margin-top: 30px;
@@ -44,4 +38,19 @@
 }
 .button:hover{
  background-color: green;
+}
+
+.Manage-button{
+  text-align: center;
+  width: 300px;
+  font-size: 30px;
+}
+.Manage-button:hover{
+  
+  background-color: yellow;
+}
+.homebottom{
+  height: 50px;
+  color: white;
+  background-color: blue;
 }

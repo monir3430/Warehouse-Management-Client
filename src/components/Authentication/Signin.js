@@ -3,9 +3,12 @@ import {auth} from "../../firebase/firebase.init"
 import { toast, ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import "./Signin.css"
-import {getAuth, GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
 import {useSendPasswordResetEmail, useSignInWithEmailAndPassword} from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+
+import spinner from "../../images/spinner.gif"
+
 
 
 const Signin = () => {
@@ -96,12 +99,15 @@ const Signin = () => {
       const from = location.state?.from?.pathname || "/home";
 
       if (loading) {
-        return <p>Loading.....</p>
+        return <p><img src={spinner} alt="" /></p>
     }
        
            if (user) {
             navigate(from, { replace: true }); 
+           
           };
+         
+         
 
 
 
