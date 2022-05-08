@@ -19,7 +19,7 @@ const AddItems = () => {
 
            // Post data to server
 
-    fetch('http://localhost:5000/bookInfo', {
+    fetch('https://afternoon-lake-29194.herokuapp.com/bookInfo', {
         method: 'POST',
         headers:{
             'content-type': 'application/json'

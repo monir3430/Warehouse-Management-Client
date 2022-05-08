@@ -6,7 +6,7 @@ import "./ManageItems.css"
 const ManageItems = () => {
     const [bookInfo, setBookInfo] = useState([]);
     useEffect(()=>{
-        fetch('http://localhost:5000/bookInfo')
+        fetch('https://afternoon-lake-29194.herokuapp.com/bookInfo')
         .then(res=>res.json())
         .then(data => setBookInfo(data))
     }, [])
@@ -16,7 +16,7 @@ const ManageItems = () => {
         const deleteProceed = window.confirm('Are you sure to delete? ')
         if(deleteProceed){
             console.log("deleting id", id)
-            const url = `http://localhost:5000/bookInfo/${id}`;
+            const url = `https://afternoon-lake-29194.herokuapp.com/bookInfo/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

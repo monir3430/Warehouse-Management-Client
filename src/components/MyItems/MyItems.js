@@ -11,7 +11,7 @@ const MyItems = () => {
     useEffect(()=>{
         const getMyBooks = async ()=>{
             const email = user.email;
-            const url = `http://localhost:5000/bookInfo?email=${email}`;
+            const url = `https://afternoon-lake-29194.herokuapp.com/bookInfo?email=${email}`;
            const {data} = await axios.get(url)
            const userBooks = data.filter(book=>book.email === email);
            setMyBooks(userBooks);

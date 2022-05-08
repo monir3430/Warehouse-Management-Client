@@ -9,7 +9,7 @@ const UpdateInfo = () => {
     const [book, setBook] = useState({});
 
     useEffect(() => {
-        const url = `http://localhost:5000/bookInfo/${id}`;
+        const url = `https://afternoon-lake-29194.herokuapp.com/bookInfo/${id}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setBook(data));
@@ -34,7 +34,7 @@ const UpdateInfo = () => {
 
 
         // Update data to server---------------------------------------------
-        const url = `http://localhost:5000/bookInfo/${id}`;
+        const url = `https://afternoon-lake-29194.herokuapp.com/bookInfo/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {
