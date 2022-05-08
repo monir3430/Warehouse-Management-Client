@@ -1,16 +1,16 @@
-table {
-    margin: auto;
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 75%;
-  }
+
+
+.table th{
+   text-align: center ;
+}
   
-  td, th {
+  th {
     border: 1px solid #dddddd;
-    text-align: left;
+    text-align: right;
     padding: 8px;
+    
   }
   
   tr:nth-child(even) {
-    background-color: #dddddd;
+    background-color: #b9b3b3;
   }

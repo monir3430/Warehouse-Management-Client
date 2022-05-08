@@ -53,3 +53,21 @@
 
 
 }
+
+/* media Query */
+
+@media only screen and (max-width: 600px) {
+    .inventory{
+        display: grid;
+        grid-template-columns: repeat(1, 0fr);
+        
+        
+    }
+    .full-area{
+        display: inline;
+        
+    }
+    .Manage-button{
+        width: 100%;
+    }
+}

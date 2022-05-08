@@ -77,14 +77,14 @@ const Signin = () => {
     }
 
     // Sign in with Google----------------------------
-    const [gooleUser, setGoogleUser] = useState({});
+    const [googleUser, setGoogleUser] = useState({});
     const googleProvider = new GoogleAuthProvider();
     const handleGoogleSignIn = () => {
 
         signInWithPopup(auth, googleProvider)
           .then(result => {
             const user = result.user;
-            setGoogleUser(user);
+            googleUser(user);
             console.log(user);
           })
           .catch(error => {

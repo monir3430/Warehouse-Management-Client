@@ -6,3 +6,14 @@
     background: #d2c6c6;
     box-shadow:  50px 50px 100px #a29898,-50px -50px 100px #fff4f4;
 }
+
+
+/* media query */
+
+
+@media only screen and (max-width: 600px) {
+    .addproduct {
+       width: 340px;
+     }
+     
+   }

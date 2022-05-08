@@ -35,6 +35,17 @@ const ManageItems = () => {
         
     }
 
+    const updateQty = (id) => {
+        const result = bookInfo.map(b=> {
+            if(b._id === id) {
+                b.stock = b.stock - 1
+            }
+            return b;
+        });
+
+        setBookInfo(result);
+    }
+
    
     return (
         <div>
@@ -55,8 +66,8 @@ const ManageItems = () => {
                      
                      
                      <span >
-                     <button className='manage-button' onClick={()=>dataDelete(book._id)}>Delete <i class="fa-solid fa-trash-can"></i></button>
-                     <button className='manage-button2' onClick={()=>dataDelete(book._id)}>Delivered <i class="fa-regular fa-truck-ramp-box"></i></button>
+                     <button className='manage-button' onClick={()=>dataDelete(book._id)}>Delete <i className="fa-solid fa-trash-can"></i></button>
+                     <button className='manage-button2' onClick={() => updateQty(book._id)}>Delivered <i className="fa-regular fa-truck-ramp-box"></i></button>
                      </span> <br /><br />
                      <Link to={`/update/${book._id}`}><button className='button'>Update Book Info</button></Link>
                      
@@ -69,9 +80,9 @@ const ManageItems = () => {
                      
                  }
             </div>
-            <div>
-            <Link to={'/additems'}><button className='Manage-button'>Add Book</button></Link>
-              </div>
+            <div> <br />
+            <Link to={'/additems'}><button className='Manage-button'>Add New Book</button></Link>
+              </div> <br />
                   
   
                   <ToastContainer/>

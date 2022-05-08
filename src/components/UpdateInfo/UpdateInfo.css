@@ -28,3 +28,15 @@
 .Manage-button{
     margin: auto;
 }
+
+@media only screen and (max-width: 600px) {
+    .UpdateInfoALL{
+        display:grid;
+        grid-template-columns: repeat(1, 1fr);
+    }  
+
+    .updateBookInfo{
+        width: 340px;
+    }
+}
+        

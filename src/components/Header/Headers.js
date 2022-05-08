@@ -22,9 +22,9 @@ const Headers = () => {
     }, [])
     
     return (
-       <div>
+       <div className="mobile">
        
-       <Nav>
+       <Nav >
 
         <NavMenu>
         {!user?

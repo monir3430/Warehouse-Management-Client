@@ -22,7 +22,7 @@ const Home = () => {
 
             <div className='activities'>
 
-                <div>
+                <div className='banner'>
                     <h1><img src={banner} alt="" /></h1>
                 </div>
                 <div className='extra-section'>

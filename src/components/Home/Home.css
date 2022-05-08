@@ -54,3 +54,25 @@
   color: white;
   background-color: blue;
 }
+
+
+/* Media Query  */
+
+@media only screen and (max-width: 600px) {
+ .banner img {
+    width: 340px;
+  }
+  .extra-section{
+    display: inline;
+  }
+
+  .homeBookInfo{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  
+  }
+
+  .homebottom{
+    height: 100px;
+  }
+}

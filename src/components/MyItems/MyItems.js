@@ -26,21 +26,22 @@ const MyItems = () => {
 
     return (
         <div>
-           <h1>My Books : {myBooks.length}</h1>
-           {
-               myBooks.map(myBook=> <table>
-                <tr>
-                  <th>Book Name</th>
+           <h1>User's total Books : {myBooks.length}</h1>
+           <tr className='table'>
+                  <th>Name</th>
                   <th>Author</th>
                   <th>Publisher</th>
-                </tr>
-                <tr>
-                  <td>{myBook.name}</td>
-                  <td>{myBook.author}</td>
-                  <td>{myBook.publisher}</td>
+            </tr>
+           {
+               myBooks.map(myBook=> 
+               
+                <tr className='table'>
+                  <th>{myBook.name}</th>
+                  <th>{myBook.author}</th>
+                  <th>{myBook.publisher}</th>
                 </tr>
                
-              </table>)
+              )
            }
         </div>
     );

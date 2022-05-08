@@ -50,6 +50,7 @@ display: flex;
 align-items: center;
 margin-right: 24px;
 
+
 `
 export const NavBtnLink = styled(Link)`
 margin-left:15px;
